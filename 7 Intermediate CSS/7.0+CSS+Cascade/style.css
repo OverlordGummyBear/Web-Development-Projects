@@ -17,6 +17,7 @@ p {
 
 .inner-box{
   background-color: red;
+  /*Inner-box needs to be below box, otherwise there are no blue boxes*/
 }
 
 #outer-box{
