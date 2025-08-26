@@ -10,3 +10,16 @@ p {
   margin: 0;
   padding: 0;
 }
+
+.white-text{
+  color: white;
+}
+
+.inner-box{
+  background-color: red;
+}
+
+#outer-box{
+  background-color: purple;
+  /*padding is not needed here as it gets it from the box class*/
+}
