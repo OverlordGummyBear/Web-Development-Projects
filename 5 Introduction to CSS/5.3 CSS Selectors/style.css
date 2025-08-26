@@ -5,3 +5,41 @@ ol {
 }
 
 /* Write your CSS below, don't change the rules above. */
+p{
+  color: red;
+}
+
+.note{
+  font-size: 20px;
+}
+
+#id-selector-demo{
+  color: green;
+}
+
+li[value="4"]{
+  color: blue;
+}
+
+*{
+  text-align: center;
+}
+
+/*
+element selector: In the previous section we worked with single element selector for css, namely h1{}. It also works for a, p, h2 (it means that we are applying the css to all elements with those tags).
+
+class selector: .red-heading{color: red; } we can add this class as an attribute to an element
+
+id selector: #main{color: red; } select all elements with a particular id attribute
+  work similarly as the class selector
+  The id tag should only be applied to a single element on a single html file
+
+attribute selector: p[draggable]{color: red}             
+  the p is the html element we want to select, and the text inside the [] is used to select the attribute we want to select
+  select all paragraph elements with the attribute draggable and apply the css element to them
+  You can also select the value of the attribute that we want to select e.g. draggable="false", just add p[draggable="false"]
+
+universal selector: *{color: red; }
+  means that you select all elements
+  the attributes, values, classes, etc. does not matter as it chooses everything where the stylesheet is active
+*/
