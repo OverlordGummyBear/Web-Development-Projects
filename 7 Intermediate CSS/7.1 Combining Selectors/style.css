@@ -1,1 +1,25 @@
-/* Write your code here: */
+ /* Write your code here: */
+/*Grouping selectors*/
+ h1, h2{
+    color: blueviolet;
+} /*you can also group classes, id's, etc. */
+
+/*Parent and child*/
+.box > p {
+    color: firebrick;
+} /* .box is the parent and p is the child, it has to be a direct child and not a grandchild, etc*/
+
+/*Ancestor and descendent: .box is the ancestor and li is the descenden. A child and parent selector won't work in this case*/
+.box li {
+    color: blue;
+} 
+
+/*Chaining selectors: Always start of with an element, and then id or class*/
+li.done {
+    color: seagreen;
+}
+
+/*Combining Combiners*/
+ul p.done {
+    font-size: 0.5rem;
+}
