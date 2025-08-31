@@ -7,6 +7,21 @@
 2. Change only the display property to make all 3 squares line up vertically like in goal2 image. 
 -->
 
+<!--
+Display values:
+> Inline: Elements are in the same line until the line is full (until the width of the webpage, then it will go to the next line)
+> Block: One element is going to take up the entire full width (you cannot set the width and height, it is by default set to the length of the string)
+> Inline block: Halfway point between the two above
+    Block part enables us to set the width and height
+    Inline part enables us to have elements that go onto the same line
+> None: Any element with this display value disappear, which is useful if you e.g. have a button that hides an element or when you check an item in a todolist and you want it to disappear
+-->
+
+<!--
+Exercise 1: Change all display values to inline-block
+Exercise 2: Change all display values to block
+-->
+
 <head>
   <title>CSS Display Property Example</title>
   <style>
@@ -22,14 +37,14 @@
     }
 
     .green {
-      display: inline;
+      display: block;
       width: 200px;
       height: 200px;
       background-color: green;
     }
 
     .blue {
-      display: inline-block;
+      display: block;
       width: 200px;
       height: 200px;
       background-color: blue;
