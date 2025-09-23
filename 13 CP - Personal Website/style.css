@@ -1,0 +1,94 @@
+body{
+    margin: 0;
+}
+
+.title-container{
+    display: flex;
+    height: 40vh;
+    background-color: #A1E3F9;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding-top: 100px;
+}
+
+h1{
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 100;
+    line-height: 1.5;
+}
+
+br{
+    padding-top: 10px;
+}
+
+h2{
+    font-family: "SUSE Mono", sans-serif;
+}
+
+.web-development-icon{
+    height: 150px;
+    margin-bottom: 100px;
+}
+
+.hero-container{
+    display: grid;
+    margin-top: 2vh;
+    grid-template-columns: minmax(300px, 600px) minmax(200px, 300px);
+    grid-template-rows: auto;
+    width: 50%;
+    max-width: 1000px;
+    margin: 100px auto 0 auto;
+    gap: 50px;
+}
+
+.me{
+    max-width: 100%;
+    border-radius: 20%;
+}
+
+p{
+    font-family: "SUSE Mono", sans-serif;
+}
+
+.contact-me{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.contact-me > h3{
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.contact-message{
+    width: 40%;
+    margin: 30px auto 30px;
+}
+
+.footer-container{
+    background-color: #A1E3F9;
+}
+
+@media (max-width: 750px) {
+    .hero-container{
+        margin-left: 10%;
+    }
+}
+
+@media (max-width: 600px) {
+    .title-container {
+        flex-flow: column;
+    }
+
+    .hero-container{
+        grid-template-columns: auto;
+        grid-template-rows: 1fr 1fr;
+        gap: 10px;
+        margin-left: auto;
+    }
+
+    .me{
+        max-width: 100%;
+    }
+}
