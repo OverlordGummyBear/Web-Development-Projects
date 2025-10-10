@@ -5,7 +5,21 @@ buttons.forEach(button => {
         
         var buttonInnerHTML = this.innerHTML;
 
-        switch (buttonInnerHTML) {
+        MakeSound(buttonInnerHTML);
+        buttonAnimation(buttonInnerHTML);
+    });
+}); 
+
+
+document.addEventListener("keydown", function(event) {
+    var key = event.key;
+
+    MakeSound(key);
+    buttonAnimation(key);
+});
+
+function MakeSound(key){
+    switch (key) {
             case "w":
                 var tom1 = new Audio("./sounds/tom-1.mp3");
                 tom1.play();
@@ -37,9 +51,15 @@ buttons.forEach(button => {
             default:
                 console.log(buttonInnerHTML);
         }
-    });
-});
+}
 
+function buttonAnimation(currentKey){
 
-//var audio = new Audio("./sounds/tom-1.mp3");
-//audio.play();
+    var activeButton = document.querySelector("." + currentKey);
+
+    activeButton.classList.add("pressed");
+
+    setTimeout(function() {
+        activeButton.classList.remove("pressed")
+    }, 100);
+}
