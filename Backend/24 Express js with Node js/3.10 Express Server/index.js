@@ -18,7 +18,9 @@ console.log(`Server running on port ${port}`);
     //we can find the server in the browser under localhost:port
     //localhost is when we don't have a server on the internet and want to host the server locally (we make our own pc the server of our backend)
     //port is like doors and each have an address. When we set up the server, we said that he port/door we want to listen on is port 3000, and when we try to access localhost 3000, it will look onto our computer and find the door and enter and find the application
+    //We can stop the server by pressing Ctrl + C
 
+    //use nodemon index.js to automate the restart of the server everytime there is a file change
 
 //We can check which port on our computer is currently listening for interactions from the outside
 //type into the terminal: netstat -ano | findstr "LISTENING"

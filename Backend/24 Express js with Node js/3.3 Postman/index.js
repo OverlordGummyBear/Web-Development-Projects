@@ -9,6 +9,8 @@ const port = 3000;
 // You should not get any 404s or 500 status codes.
 // *********************
 
+//whenever we download node projects, the dependencies are not install, so you need  to cd to the folder where the project is and write npm install and it will look at all the dependencies and install them
+
 app.get("/", (req, res) => {
   res.send("<h1>Home Page</h1>");
 });
@@ -34,3 +36,4 @@ app.delete("/user/angela", (req, res) => {
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
 });
+
