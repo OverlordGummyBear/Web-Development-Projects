@@ -32,7 +32,7 @@ app.post("/check", (req, res) => {
 
     if(userIsAuthorized) {
         userIsAuthorized = false;
-        res.sendFile(__dirname + "/public/secret.html");
+        res.sendFile(__dirname + "/public/secret.html"); //sendFile is only for static files
     } else{
         res.sendFile(__dirname + "/public/index.html");
     }
