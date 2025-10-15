@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles/main.css">
+
     <title>Blog Home Page</title>
 </head>
 <body>
@@ -15,18 +18,18 @@
 
     <div>
         
-        <% for(let i = 0; i < posts.length; i++) { %>
+        <% for(let i = 0; i < posts.length; i++) { %> <!--Display each post that is created-->
             <div class="post">
-                <h2> <%= posts[i].title %></h2>
-                <p> <%= posts[i].description %></p>
+                <h2> <%= posts[i].title %></h2> <!--Display title of post-->
+                <p> <%= posts[i].description %></p> <!--Display post description-->
                 
-                <form action="/edit" method="POST">
+                <form action="/edit" method="POST"> <!--Edit button-->
                     <input type="hidden" name="userName" value="<%= userName %>">
                     <input type="hidden" name="postId" value="<%= i %>">
                     <input type="submit" value="Edit">
                 </form>
 
-                <form action="/delete" method="POST">
+                <form action="/delete" method="POST"> <!--Delete button-->
                     <input type="hidden" name="userName" value="<%= userName %>">
                     <input type="hidden" name="postId" value="<%= i %>">
                     <input type="submit" value="Delete">
@@ -34,5 +37,10 @@
             </div>
         <% };  %>
     </div>
+
+
+<%- include("partials/footer.ejs") %>
+
 </body>
+
 </html>

@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles/main.css">
+
     <title>Blog application</title>
 </head>
 <body>
     <h1>What is your name?</h1>
-    <form action="/enter" method="POST">
+    <form action="/enter" method="POST"> <!--Form where you can type your name, so it will be displayed on the post page-->
         <input type="text" name="fName" placeholder="Name">
          </br>
         <input type="Submit" value="Enter">
     </form>
+
+<%- include("partials/footer.ejs") %>
+
 </body>
+
 </html>
