@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Home Page</title>
+</head>
+<body>
+    <h1> Hi <%= userName %> ! </h1>
+    
+    <form action="/create" method="POST">
+        <input type="hidden" name="userName" value="<%= userName %>">
+        <input type="submit" value="Create Post">
+    </form>
+
+    <div>
+        
+        <% for(let i = 0; i < posts.length; i++) { %>
+            <div class="post">
+                <h2> <%= posts[i].title %></h2>
+                <p> <%= posts[i].description %></p>
+                
+                <form action="/edit" method="POST">
+                    <input type="hidden" name="userName" value="<%= userName %>">
+                    <input type="hidden" name="postId" value="<%= i %>">
+                    <input type="submit" value="Edit">
+                </form>
+
+                <form action="/delete" method="POST">
+                    <input type="hidden" name="userName" value="<%= userName %>">
+                    <input type="hidden" name="postId" value="<%= i %>">
+                    <input type="submit" value="Delete">
+                </form>
+            </div>
+        <% };  %>
+    </div>
+</body>
+</html>
