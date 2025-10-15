@@ -1,20 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<%- include("partials/header.ejs") %>
 
-    <link rel="stylesheet" href="styles/main.css">
-
-    <title>Blog application</title>
-</head>
 <body>
-    <h1>What is your name?</h1>
-    <form action="/enter" method="POST"> <!--Form where you can type your name, so it will be displayed on the post page-->
-        <input type="text" name="fName" placeholder="Name">
-         </br>
-        <input type="Submit" value="Enter">
-    </form>
+    <div class="welcome-container">
+        <h1 class="suse-mono name-title">What is your name?</h1>
+        
+            <form class="form-container" action="/enter" method="POST"> <!--Form where you can type your name, so it will be displayed on the post-->
+                <input class="name-field" type="text" name="fName" placeholder="Name">
+                
+                <input class="name-btn jockey-one-regular" type="Submit" value="Enter">
+            </form>
+        
+    </div>
 
 <%- include("partials/footer.ejs") %>
 

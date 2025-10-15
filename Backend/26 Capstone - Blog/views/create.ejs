@@ -1,35 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<%- include("partials/header.ejs") %>
 
-    <link rel="stylesheet" href="styles/main.css">
-
-    <title>Create blog post</title>
-</head>
 <body>
-    <h1>Create Blog Post</h1>
-    
-    <form action="/save" method="POST">
-        <input type="hidden" name="userName" value="<%= userName %>">
-        <% if(locals.postId) { %> <!--In cases where a post is being edited -->
-            <input type="hidden" name="isEditing" value= <%- true %> >
-            <input type="hidden" name="id" value= <%= postId %> >
-            <input type="text" name="title" value="<%= posts[postId].title %>"> <!--Get the title for the relevant post with id-->
-            </br>
-            <input type="text" name="description" value="<%= posts[postId].description %>"> <!--Get the relevant description -->
-            </br>
-        <% } else { %> <!--In cases where a new post is created: Default post creation page -->
-            <input type="hidden" name="isEditing" value="false">  
-            <input type="text" name="title" placeholder="Blog title">
-            </br>
-            <input type="text" name="description" placeholder="What is on your mind?">
-            </br>
-        <% } %>
-        <input type="submit" value="Save">
-    </form>
+    <div class="header">
+        <h1 class="suse-mono name-title"> Create Blog Post</h1>
+    </div>
 
+    <div class="post-container">
+        <div>
+            <form class="form-container" action="/save" method="POST">
+                <input type="hidden" name="userName" value="<%= userName %>">
+                <% if(locals.postId) { %> <!--In cases where a post is being edited -->
+                    <input type="hidden" name="isEditing" value= <%- true %> >
+                    <input type="hidden" name="id" value= <%= postId %> >
+                    <input class="input" type="text" name="title" value="<%= posts[postId].title %>"> <!--Get the title for the relevant post with id-->
+                    </br>
+                    <!-- <input type="text" name="description" value="<%= posts[postId].description %>"> --> <!--Get the relevant description -->
+                    <textarea name="description"> <%= posts[postId].description %> </textarea>
+                    </br>
+                <% } else { %> <!--In cases where a new post is created: Default post creation page -->
+                    <input type="hidden" name="isEditing" value="false">  
+                    <input type="text" name="title" placeholder="Blog title">
+                    </br>
+                    <!-- <input type="text" name="description" placeholder="What is on your mind?"> -->
+                    <textarea name="description" placeholder="What is on your mind?"></textarea>
+                    </br>
+                <% } %>
+                <input class="submit-button" type="submit" value="Save">
+            </form>
+        </div>
+    </div>
 <%- include("partials/footer.ejs") %>
 
 </body>
