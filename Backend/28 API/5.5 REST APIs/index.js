@@ -12,7 +12,7 @@ const API_URL = "https://secrets-api.appbrewery.com";
 // https://secrets-api.appbrewery.com/
 
 //TODO 1: Add your own bearer token from the previous lesson.
-const yourBearerToken = "";
+const yourBearerToken = "e79d1f10-2099-4a9f-a62d-a4eaa3a66b3b";
 const config = {
   headers: { Authorization: `Bearer ${yourBearerToken}` },
 };
@@ -35,21 +35,45 @@ app.post("/get-secret", async (req, res) => {
 
 app.post("/post-secret", async (req, res) => {
   // TODO 2: Use axios to POST the data from req.body to the secrets api servers.
+  try {
+    const result = await axios.post(API_URL + "/secrets", req.body , config); //req.body sends both the secret and score over
+    res.render("index.ejs", { content: JSON.stringify(result.data) });
+  } catch (error) {
+    res.render("index.ejs", { content: JSON.stringify(error.response.data) });
+  }
 });
 
 app.post("/put-secret", async (req, res) => {
   const searchId = req.body.id;
   // TODO 3: Use axios to PUT the data from req.body to the secrets api servers.
+  try {
+    const result = await axios.put(API_URL + "/secrets/" + searchId, req.body, config); //replacse the secret and score of that secret on the specified secretId
+    res.render("index.ejs", { content: JSON.stringify(result.data) });
+  } catch (error) {
+    res.render("index.ejs", { content: JSON.stringify(error.response.data) });
+  }
 });
 
 app.post("/patch-secret", async (req, res) => {
   const searchId = req.body.id;
   // TODO 4: Use axios to PATCH the data from req.body to the secrets api servers.
+   try {
+    const result = await axios.patch(API_URL + "/secrets/" + searchId, req.body, config); //replacse the secret and score of that secret on the specified secretId
+    res.render("index.ejs", { content: JSON.stringify(result.data) });
+  } catch (error) {
+    res.render("index.ejs", { content: JSON.stringify(error.response.data) });
+  }
 });
 
 app.post("/delete-secret", async (req, res) => {
   const searchId = req.body.id;
   // TODO 5: Use axios to DELETE the item with searchId from the secrets api servers.
+  try {
+    const result = await axios.delete(API_URL + "/secrets/" + searchId, config); //replacse the secret and score of that secret on the specified secretId
+    res.render("index.ejs", { content: JSON.stringify(result.data) });
+  } catch (error) {
+    res.render("index.ejs", { content: JSON.stringify(error.response.data) });
+  }
 });
 
 app.listen(port, () => {
